@@ -1,0 +1,32 @@
+const AppReducer = (state, action) => {
+    switch (action.type) {
+        case 'GET_MOVIMIENTOS':
+            return {
+                ...state,
+                loading: false,
+                movimientos: action.payload,
+            };
+        case 'DELETE_MOVIMIENTO':
+            return {
+                ...state,
+                loading: false,
+                movimientos: state.movimientos.filter(movimiento => movimiento._id !== action.payload),
+            };
+        case 'ADD_MOVIMIENTO':
+            return {
+                ...state,
+                loading: false,
+                movimientos: [action.payload, ...state.movimientos],
+            };
+        case 'MOVIMIENTOS_ERROR':
+            return {
+                ...state,
+                loading: false,
+                error: action.payload
+            };
+        default:
+            return state;
+    }
+}
+
+export default AppReducer;
