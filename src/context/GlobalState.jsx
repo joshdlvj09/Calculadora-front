@@ -9,7 +9,7 @@ const initialState = {
 };
 
 // url de la api - Asegúrate de que esta ruta sea la correcta en tu backend
-const API_URL = 'https://calculadora-back-f4kd.onrender.com';
+const API_URL = 'https://calculadora-back-f4kd.onrender.com/api/movimientos';
 
 // Create context
 export const GlobalContext = createContext(initialState);
